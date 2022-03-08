@@ -1,6 +1,5 @@
 // определяю функцию, позволяющую получить номер недели, исходя из числа месяца
 function getWeekNum(num) {
-  //прописываю guard expression на случай неправильных входных данных
   if (num > 31) {
     return "Sorry, but data is invalid";
   }

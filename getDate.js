@@ -25,8 +25,7 @@ const arrOfMonths = [
   "Декабря",
 ];
 
-const getDayInfo = (date) => {
-  // прописываю несколько guard expressions, чтобы избежать ошибок
+const getDateInfo = (date) => {
   if (typeof date !== "string") {
     return "Sorry, but the data is invalid";
   }
@@ -35,18 +34,17 @@ const getDayInfo = (date) => {
     return "Sorry, but the data is invalid";
   }
 
-  // Перевожу входные данные в нужный для работы с объектом Date формат
   const converted = date.split(".").reverse().join(".");
   const dateInfo = new Date(converted);
 
   const year = dateInfo.getFullYear().toString();
-  // Так как метод getDay() возвращает число, использую его в качестве индекса
+
   const indexOfDay = dateInfo.getDay();
   const weekDay = arrOfWeekDays[indexOfDay];
-  // Такая же логика для работы с методом getMonth(), как описанная выше
+
   const indexOfMonth = dateInfo.getMonth();
   const month = arrOfMonths[indexOfMonth];
-  // "+" для того, чтобы перевести значение константы из строкового формата в числовой
+
   const day = +date.split(".")[0];
 
   const weekNum = getWeekNum(day);
@@ -54,6 +52,4 @@ const getDayInfo = (date) => {
   return `${weekDay}, ${weekNum} ${month} ${year} года`;
 };
 
-console.log(getDayInfo("14.10.2022"));
-
-export default getDayInfo;
+export default getDateInfo;
