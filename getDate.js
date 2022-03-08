@@ -25,7 +25,7 @@ const arrOfMonths = [
   "Декабря",
 ];
 
-const getDateInfo = (date) => {
+const getDayInfo = (date) => {
   if (typeof date !== "string") {
     return "Sorry, but the data is invalid";
   }
@@ -52,4 +52,4 @@ const getDateInfo = (date) => {
   return `${weekDay}, ${weekNum} ${month} ${year} года`;
 };
 
-export default getDateInfo;
+export default getDayInfo;
